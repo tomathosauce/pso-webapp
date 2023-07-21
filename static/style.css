@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina');
+body,
+html {
+  height: 100%;
+  font-family: Baloo Bhaina;
+}
+
+
+body {
+  background:#27ce58;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  cursor:default;
+  flex-direction: column 
+}
+
+td div {
+  width: 20vh;
+  height: 20vh;
+  
+  border-radius: 20%;
+  position: relative;
+}
+#r0 div {
+  background:#ffcd18;
+}
+
+#r1 div {
+  background:#ff9138;
+}
+
+#r2 div {
+  background:#ff5f3f;
+}
+
+#board {
+  background: #2c313a;
+  display: inline-block;
+  padding: 3%;
+  border-radius: 5%;
+  transform: rotateY(0deg);
+}
+
+.path {
+  stroke-dasharray: 188;
+  stroke-dashoffset: 188;
+}
+
+.l1 {
+  stroke-dasharray: 85;
+  stroke-dashoffset: 85;
+}
+
+.l2 {
+  stroke-dasharray: 85;
+  stroke-dashoffset: 85;
+}
+
+.showcircle {
+  animation: p .15s ease-in
+}
+
+.showline1 {
+  animation: x .1s ease-in
+}
+
+.showline2 {
+  animation: x .2s ease-in
+}
+
+.title {
+  display:block;
+  text-align:center;
+  font-size:10vh;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%)
+}
+
+.player {
+  display:block;
+  position:absolute;
+  font-size:6vh;
+  text-align:center;
+  line-height: 120%;
+  top:50%;
+  transform:translateY(-50%)
+}
+
+.choose {
+  display:block;
+  position:absolute;
+  font-size:5vh;
+  text-align:center;
+  line-height: 120%;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%)
+}
+
+.first {
+  display:block;
+  position:absolute;
+  font-size:8vh;
+  text-align:center;
+  line-height: 120%;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%)
+}
+
+#r1 .c1 div, #r1 .c2 div, #r2 .c1 div, #r2 .c2 div {
+  transition:background .5s
+}
+
+#r1 .c1 div:hover, #r1 .c2 div:hover, #r2 .c1 div:hover, #r2 .c2 div:hover {
+  background:white
+}
+
+@media screen and (max-width: 640px) {
+  td div {
+    width: 20vw;
+    height: 20vw;
+  }
+  .title {
+    font-size:10vw;
+  }
+  .player {
+    font-size:5vw;
+  }
+  .choose {
+    font-size:5vw;
+  }
+  .first {
+    font-size:10vw;
+  }
+}
+
+@keyframes p {
+  0% {
+    stroke-dashoffset: 189;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes x {
+  0% {
+    stroke-dashoffset: 85;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/*
+.xs, .circles, .choose, .first, .player, .title {
+  display:none
+}*/

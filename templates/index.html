@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>TicTacToe</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h1>Servidor: {{ hostname }}</h1>
+<div id="board">
+  <table>
+    <tr id="r0">
+      <td class="c0">
+        <div>
+          <span class="title">Tic</span>
+          <svg viewBox="0 0 100 100" class="x" style="display:none"><line class="l1" x1="20" y1="20" x2="80" y2="80" stroke="black" stroke-width="20"></line><line class="l2" x1="80" y1="20" x2="20" y2="80" stroke="black" stroke-width="20"></line></svg>
+          <svg viewBox="0 0 100 100" class="circle" style="display:none">
+            <path class="path" d="M50 20 A 20 20, 0, 1, 1, 50 80 a 20 20, 0, 1, 1, 0 -60 Z" stroke-width="20" stroke="#000" fill="none"></path>
+            </svg>
+        </div>
+      </td>
+      <td class="c1">
+        <div>
+          <span class="title">Tac</span>
+          <svg viewBox="0 0 100 100" class="x" style="display:none"><line class="l1" x1="20" y1="20" x2="80" y2="80" stroke="black" stroke-width="20"></line><line class="l2" x1="80" y1="20" x2="20" y2="80" stroke="black" stroke-width="20"></line></svg>
+          <svg viewBox="0 0 100 100" class="circle" style="display:none">
+            <path class="path" d="M50 20 A 20 20, 0, 1, 1, 50 80 a 20 20, 0, 1, 1, 0 -60 Z" stroke-width="20" stroke="#000" fill="none"></path>
+            </svg>
+        </div>
+      </td>
+      <td class="c2">
+        <div>
+          <span class="title">Toe</span>
+          <svg viewBox="0 0 100 100" class="x" style="display:none"><line class="l1" x1="20" y1="20" x2="80" y2="80" stroke="black" stroke-width="20"></line><line class="l2" x1="80" y1="20" x2="20" y2="80" stroke="black" stroke-width="20"></line></svg>
+          <svg viewBox="0 0 100 100" class="circle" style="display:none">
+            <path class="path" d="M50 20 A 20 20, 0, 1, 1, 50 80 a 20 20, 0, 1, 1, 0 -60 Z" stroke-width="20" stroke="#000" fill="none"></path>
+            </svg>
+        </div>
+      </td>
+    </tr>
+    <tr id="r1">
+      <td class="c0">
+        <div>
+          <span class="player">Who's first?</span>
+          <svg viewBox="0 0 100 100" class="x" style="display:none"><line class="l1" x1="20" y1="20" x2="80" y2="80" stroke="black" stroke-width="20"></line><line class="l2" x1="80" y1="20" x2="20" y2="80" stroke="black" stroke-width="20"></line></svg>
+          <svg viewBox="0 0 100 100" class="circle" style="display:none">
+            <path class="path" d="M50 20 A 20 20, 0, 1, 1, 50 80 a 20 20, 0, 1, 1, 0 -60 Z" stroke-width="20" stroke="#000" fill="none"></path>
+            </svg>
+        </div>
+      </td>
+      <td class="c1">
+        <div>
+          <span class="first">You</span>
+          <svg viewBox="0 0 100 100" class="x" style="display:none"><line class="l1" x1="20" y1="20" x2="80" y2="80" stroke="black" stroke-width="20"></line><line class="l2" x1="80" y1="20" x2="20" y2="80" stroke="black" stroke-width="20"></line></svg>
+          <svg viewBox="0 0 100 100" class="circle" style="display:none">
+            <path class="path" d="M50 20 A 20 20, 0, 1, 1, 50 80 a 20 20, 0, 1, 1, 0 -60 Z" stroke-width="20" stroke="#000" fill="none"></path>
+            </svg>
+        </div>
+      </td>
+      <td class="c2">
+        <div>
+          <span class="first">AI</span>
+          <svg viewBox="0 0 100 100" class="x" style="display:none"><line class="l1" x1="20" y1="20" x2="80" y2="80" stroke="black" stroke-width="20"></line><line class="l2" x1="80" y1="20" x2="20" y2="80" stroke="black" stroke-width="20"></line></svg>
+          <svg viewBox="0 0 100 100" class="circle" style="display:none">
+            <path class="path" d="M50 20 A 20 20, 0, 1, 1, 50 80 a 20 20, 0, 1, 1, 0 -60 Z" stroke-width="20" stroke="#000" fill="none"></path>
+            </svg>
+        </div>
+      </td>
+    </tr>
+    <tr id="r2">
+      <td class="c0">
+        <div>
+          <span class="choose">Choose</span>
+          <svg viewBox="0 0 100 100" class="x" style="display:none"><line class="l1" x1="20" y1="20" x2="80" y2="80" stroke="black" stroke-width="20"></line><line class="l2" x1="80" y1="20" x2="20" y2="80" stroke="black" stroke-width="20"></line></svg>
+          <svg viewBox="0 0 100 100" class="circle" style="display:none">
+            <path class="path" d="M50 20 A 20 20, 0, 1, 1, 50 80 a 20 20, 0, 1, 1, 0 -60 Z" stroke-width="20" stroke="#000" fill="none"></path>
+            </svg>
+        </div>
+      </td>
+      <td class="c1">
+        <div>
+          <svg viewBox="0 0 100 100" class="x" style="display:none"><line class="l1" x1="20" y1="20" x2="80" y2="80" stroke="black" stroke-width="20"></line><line class="l2" x1="80" y1="20" x2="20" y2="80" stroke="black" stroke-width="20"></line></svg>
+          <svg viewBox="0 0 100 100" class="circle" style="display:none">
+            <path class="path" d="M50 20 A 20 20, 0, 1, 1, 50 80 a 20 20, 0, 1, 1, 0 -60 Z" stroke-width="20" stroke="#000" fill="none"></path>
+            </svg>
+          <svg viewBox="0 0 100 100" class="xs"><line class="l1s" x1="20" y1="20" x2="80" y2="80" stroke="black" stroke-width="20"></line><line class="l2s" x1="80" y1="20" x2="20" y2="80" stroke="black" stroke-width="20"></line></svg>
+        </div>
+      </td>
+      <td class="c2">
+        <div>
+          <svg viewBox="0 0 100 100" class="x" style="display:none"><line class="l1" x1="20" y1="20" x2="80" y2="80" stroke="black" stroke-width="20"></line><line class="l2" x1="80" y1="20" x2="20" y2="80" stroke="black" stroke-width="20"></line></svg>
+          <svg viewBox="0 0 100 100" class="circle" style="display:none">
+            <path class="path" d="M50 20 A 20 20, 0, 1, 1, 50 80 a 20 20, 0, 1, 1, 0 -60 Z" stroke-width="20" stroke="#000" fill="none"></path>
+            </svg>
+          <svg viewBox="0 0 100 100" class="circles">
+            <path class="paths" d="M50 20 A 20 20, 0, 1, 1, 50 80 a 20 20, 0, 1, 1, 0 -60 Z" stroke-width="20" stroke="#000" fill="none"></path>
+            </svg>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+  <script  src="{{ url_for('static', filename= 'script.js') }}"></script>
+
+</body>
+</html>
