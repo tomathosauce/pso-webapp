@@ -10,6 +10,8 @@ solicitudes = 0
 
 @app.route('/')
 def index():
+    global solicitudes
+    solicitudes += 1
     return render_template('index.html', hostname=hostname, solicitudes=solicitudes)
 
 app.run(host='0.0.0.0', port=5000)
